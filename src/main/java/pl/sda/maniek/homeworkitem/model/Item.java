@@ -4,7 +4,8 @@ import javax.persistence.*;
 
 @Table(name = "Items")
 @Entity(name = "Items")
-public class Item {
+ public class Item {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,12 +15,15 @@ public class Item {
     private String category;
 
     @Column(name = "cena")
-    private String price;
+    private Double price;
 
     @Column(name = "nazwa")
     private String itemName;
 
-    public Item(Long id, String category, String price, String itemName) {
+    public Item() {
+    }
+
+    public Item(Long id, String category, Double price, String itemName) {
         this.id = id;
         this.category = category;
         this.price = price;
@@ -43,11 +47,11 @@ public class Item {
         this.category = category;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

@@ -13,13 +13,13 @@ public class ItemDto {
     private String category;
 
     @JsonProperty("cena")
-    private String price;
+    private Double price;
 
     @JsonProperty("nazwa")
     private String itemName;
 
 
-    public ItemDto(Long id, String category, String price, String itemName) {
+    public ItemDto(Long id, String category, Double price, String itemName) {
         this.id = id;
         this.category = category;
         this.price = price;
@@ -37,7 +37,7 @@ public class ItemDto {
 
 
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 

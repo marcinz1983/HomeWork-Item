@@ -16,8 +16,11 @@ public class ItemRepository {
     }
 
 
-    public static List<Item> findAllItems() {
+    public List<Item> findAllItems() {
 
-        return ItemJpaRepository.findAllItems();
+       // return ItemJpaRepository.findAllItems();
+
+        List<Item> rzeczy = List.of(new Item(1l,"owoce",5d,"cytryna"));
+        return rzeczy;
     }
 }

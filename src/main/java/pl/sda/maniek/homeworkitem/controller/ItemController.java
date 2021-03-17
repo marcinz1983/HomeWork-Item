@@ -24,11 +24,11 @@ public class ItemController {
 
 
     @GetMapping
-    public List <ItemDto> getAllItems (){
+    public List <ItemDto> getAllItems(){
 
         logger.info("from method getAllItems");
 
-        return ItemService.findAllItems();
+        return itemService.findAllItems();
     }
 
 
