@@ -18,9 +18,9 @@ public class ItemRepository {
 
     public List<Item> findAllItems() {
 
-       // return ItemJpaRepository.findAllItems();
+       return itemJpaRepository.findAllItems();
 
-        List<Item> rzeczy = List.of(new Item(1l,"owoce",5d,"cytryna"));
-        return rzeczy;
+//        List<Item> rzeczy = List.of(new Item(1l,"owoce",5d,"cytryna"));
+//        return rzeczy;
     }
 }
