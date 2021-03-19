@@ -57,4 +57,23 @@ public class ItemService {
                .collect(toList());
 
     }
+
+
+    public List<ItemDto> findItemfromThePriceRange(Double min, Double max){
+        logger.info("price rage is min: [{}] and max : [{}]", min , max);
+          var result =itemRepository.findAllItems()
+                  .stream()
+                  .filter(item -> item.getPrice()<=max&& item.getPrice()>=min)
+                  .collect(toList());
+
+          if(result.isEmpty()) {
+            throw new ItemNotFoundException(String.format("no Item with price range min :[%d] to max [%d]",min,max));
+        }else
+            return result.stream()
+                    .map(item -> itemMapper.fromEntityToDto(item))
+                    .collect(toList());
+
+    }
+
+
 }

@@ -44,6 +44,13 @@ public class ItemController {
 
     }
 
+    @GetMapping("/price-range")
+    public  List<ItemDto> findItemfromThePriceRange(@RequestParam("min") double min,@RequestParam("max") double max){
+        logger.info("from controller - price rage is min: [{}] and max : [{}]", min , max);
+        return itemService.findItemfromThePriceRange(min , max);
+
+    }
+
 
 
 
